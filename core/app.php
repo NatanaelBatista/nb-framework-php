@@ -1,14 +1,20 @@
 <?php
 
-$controller = $_SERVER['REQUEST_URI'];
-$controller = explode('/', $controller);
+$uri = $_SERVER['REQUEST_URI'];
+$uri = explode('/', $uri);
 
 require_once 'config.php';
 require_once 'controller/Main.php';
 
-if(file_exists('controller/'.$controller[PATH_SIZE].'.php'))
+$controller = htmlspecialchars($uri[PATH_SIZE]);
+
+if($controller == '')
 {
-    require_once 'controller/'.$controller[PATH_SIZE].'.php';
+    $controller = MAIN_CONTROLLER;
+}
+elseif(file_exists('controller/'.$controller.'.php'))
+{
+    //
 }
 else
 {
@@ -17,5 +23,7 @@ else
     die;
 }
 
-$app = new $controller[PATH_SIZE];
+require_once 'controller/'.$controller.'.php';
+
+$app = new $controller;
 $app->index();
