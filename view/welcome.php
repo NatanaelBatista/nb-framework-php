@@ -5,22 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!--<link rel="stylesheet" href="https://natanaelbatista.github.io/nb-framework-css/nb.css">-->
     <link rel="stylesheet" href="http://localhost/nb-framework-css/nb.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <style>
         body{
-            background-color: #fff;
+            background-color: #1c1c1c;
         }
         p{
             padding: 10px;
             font-family: "Raleway", sans-serif;
             font-size: 1.5rem;
-            color: #666;
+            color: #ccc;
         }
         hr{ width: 40%;}
 
-        @media only screen and (min-width: 768px) {
+        @media only screen and (min-width: 768px){
             /* For desktop: */
             p{
                 font-size: 3rem;
